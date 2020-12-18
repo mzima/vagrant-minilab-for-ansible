@@ -1,0 +1,25 @@
+# Lab settings
+lab:
+  domain: mini.lab
+  provision: true
+
+# Node settings
+nodes:
+  ubuntu:
+    cpu: 1
+    memory: 1024
+    image: ubuntu/focal64
+    hostname: node1
+    setup: setup/nodes/debian.yml
+  centos:
+    cpu: 1
+    memory: 1024
+    image: centos/8
+    hostname: node2
+    setup: setup/nodes/rhel.yml
+  suse:
+    cpu: 1
+    memory: 1024
+    image: opensuse/Tumbleweed.x86_64
+    hostname: node3
+    setup: setup/nodes/suse.yml

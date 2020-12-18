@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: true
+  vars:
+    packages: []
+
+  tasks:
+  - name: Install packages
+    yum:
+      name: "{{ packages }}"
+      state: present
+
+  - name: Deploy remote-login group
+    group:
+      name: remote-login
+      gid: 1111
+
+  - name: Add user to remote-login group
+    user:
+      name: vagrant
+      groups: remote-login
+      append: yes
