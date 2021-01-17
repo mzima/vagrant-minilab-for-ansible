@@ -6,7 +6,7 @@
 
   tasks:
   - name: Install packages
-    yum:
+    zypper:
       name: "{{ packages }}"
       state: present
 
